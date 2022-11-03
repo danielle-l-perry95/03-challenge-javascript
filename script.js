@@ -6,6 +6,16 @@
   var numericCharacters = ['0','1','2','3','4','5','6','7','8','9'];
   var specialCharacters = ['~','!','@','#','$','%','^','&','*',':',';','<','>',',','/','?','.'];
 
+  // write if, else if, else statement for number of characters btw 8-128
+  if (characterNumber < 8 || characterNumber > 128){
+    return "Pick a password that is between 8 and 128 characters";
+  } else {
+    alert ("Your password contains" + characterNumber + "characters.");
+  }
+  // write confirmation alerts to include uppercase, lowercase, numeric, and/or special characters 
+  // write random password generator 
+  // write alert once password is generated 
+
 
 var generateBtn = document.querySelector("#generate");
 // function generatePassword() {};
