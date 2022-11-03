@@ -12,13 +12,18 @@
   } else {
     alert ("Your password contains" + characterNumber + "characters.");
   }
-  // Asking what character types to include in password
-  characterType = alert ("What types of characters do you want to include in your password?");
+// Asking what character types to include in password
+var characterType = alert ("What types of characters do you want to include in your password?");
 // write confirmation alerts to include uppercase, lowercase, numeric, and/or special characters if, else?
-
-
-  // write random password generator 
-  // write alert once password is generated 
+var wantsLowercase = ("Do you want to include lowercase characters in your password?");
+if (wantsLowercase){
+  var includeLowercase = alert ("You have selected to include lowercase characters.");
+}else{
+  alert ("You will not include any lowercase characters.");
+}
+// Validate input and at least one character type should be selected 
+// write random password generator 
+// write alert once password is generated 
 
 
 var generateBtn = document.querySelector("#generate");
