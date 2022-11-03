@@ -15,12 +15,34 @@
 // Asking what character types to include in password
 var characterType = alert ("What types of characters do you want to include in your password?");
 // write confirmation alerts to include uppercase, lowercase, numeric, and/or special characters if, else?
+var wantsUppercase = ("Do you want to include uppercase characters in your password?");
+if (wantsUppercase){
+  var includeUppercase = alert ("You have selected to include uppercase characters.");
+}else{
+  alert ("You will not include any uppercase characters.");
+}
+
 var wantsLowercase = ("Do you want to include lowercase characters in your password?");
 if (wantsLowercase){
   var includeLowercase = alert ("You have selected to include lowercase characters.");
 }else{
   alert ("You will not include any lowercase characters.");
 }
+
+var wantsNumeric = ("Do you want to include numbers in your password?");
+if (wantsNumeric){
+  var includeNumeric = alert ("You have selected to include numeric characters.");
+}else{
+  alert ("You will not include any numeric characters.");
+}
+
+var wantsSpecial = ("Do you want to include special characters in your password?");
+if (wantsSpecial){
+  var includeSpecial = alert ("You have selected to include special characters.");
+}else{
+  alert ("You will not include any special characters.");
+}
+
 // Validate input and at least one character type should be selected 
 // write random password generator 
 // write alert once password is generated 
