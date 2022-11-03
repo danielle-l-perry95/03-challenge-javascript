@@ -12,7 +12,11 @@
   } else {
     alert ("Your password contains" + characterNumber + "characters.");
   }
-  // write confirmation alerts to include uppercase, lowercase, numeric, and/or special characters 
+  // Asking what character types to include in password
+  characterType = alert ("What types of characters do you want to include in your password?");
+// write confirmation alerts to include uppercase, lowercase, numeric, and/or special characters if, else?
+
+
   // write random password generator 
   // write alert once password is generated 
 
