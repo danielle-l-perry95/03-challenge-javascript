@@ -57,15 +57,16 @@ function writePassword() {
 
 
 // write random password generator 
-  var randomPassword = ""
-  for (var i= 8; i <= 128; i++){
+  function randomPassword () {
+    for (var i= 8; i <= 128; i++){
     var randomNumber = Math.floor(Math.random()* anyCharacter.length);
-    randomPassword = randomPassword + anyCharacter.random;
     return randomPassword;
   }
   
  // write alert once password is generated 
-
+function passwordGenerated(){
+  alert ('Your password has been created');
+}
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
