@@ -10,11 +10,12 @@ function createPassword () {
 }
 
   // write if, else if, else statement for number of characters btw 8-128
-  if (characterNumber < 8 || characterNumber > 128){
-    alert ("Pick a password that is between 8 and 128 characters");
+  if (characterNumber > 8 && characterNumber < 128){
+    confirm ("Your password contains " + characterNumber + " characters.");
   } else {
-    confirm ("Your password contains" + characterNumber + "characters.");
+    alert ("Your password must include between 8 and 128 characters.")
   }
+
 // Asking what character types to include in password
 var characterType = prompt ("What types of characters do you want to include in your password?");
 // write confirmation alerts to include uppercase, lowercase, numeric, and/or special characters if, else?
@@ -53,13 +54,15 @@ if (wantsSpecial){
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  passwordText.value = password;}
+  passwordText.value = password;
+  // password.innerText = password?
+}
 
 
 // write random password generator 
   function randomPassword () {
     for (var i= 8; i <= 128; i++){
-    var randomNumber = Math.floor(Math.random()* anyCharacter.length);
+    var randomNumber = Math.floor(Math.random()* anyCharacter.length); /*should it be anyCharacter.length? */
     return randomPassword;
   }
   
@@ -69,4 +72,5 @@ function passwordGenerated(){
 }
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
+// generate.innerText = writePassword??
