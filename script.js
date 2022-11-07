@@ -6,8 +6,10 @@ function createPassword () {
   var lowercaseCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
   var numericCharacters = ['0','1','2','3','4','5','6','7','8','9'];
   var specialCharacters = ['~','!','@','#','$','%','^','&','*',':',';','<','>',',','/','?','.'];
-  var anyCharacter = [""];
 }
+
+// combining the arrays for the anyCharacter.length part of the randomPassword function 
+let anyCharacter = uppercaseCharacters.concat(lowercaseCharacters,numericCharacters,specialCharacters);
 
   // write if, else if, else statement for number of characters btw 8-128
   if (characterNumber > 8 && characterNumber < 128){
@@ -55,11 +57,10 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  // password.innerText = password?
 }
 
 
-// write random password generator 
+// write random password generator. Do I need to include i=8, i <= 128?
   function randomPassword () {
     for (var i= 8; i <= 128; i++){
     var randomNumber = Math.floor(Math.random()* anyCharacter.length); /*should it be anyCharacter.length? */
@@ -72,5 +73,4 @@ function passwordGenerated(){
 }
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
-generateBtn.addEventListener("click", writePassword); 
-// generate.innerText = writePassword??
+generateBtn.addEventListener("click", writePassword); }
