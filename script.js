@@ -19,25 +19,27 @@
   // }
 
 // two separate if statements one for less than 8 and one for greater than 128 true/false. Make sure you are given a number.
-var characterLength = prompt ("How many characters do you want to include?");
-if (characterLength < 8) {
-  alert ("Your password must include at leas 8 characters.")
-}else { confirm 
-} 
+function createPassword() {
+  var characterLength = prompt ("How many characters do you want to include?");
+  if (characterLength < 8) {
+    alert ("Your password must include at least 8 characters.")
+    return
+  } 
+  if (characterLength > 128){
+    alert ("Your password must be less than 128 characters.")
+  }
 
-if (characterLength > 128) {
-  alert ("Your password must be less than 128 characters.")
-}else {confirm
-}
-
-if (characterLength = Nan){
-  alert ("You must pick a numeric value.")
+  if (isNaN(characterLength)) {
+    alert ("Your password must be less than 128 characters.")
+    return
+  }
+var wantsUppercase = confirm("Do you want to include uppercase characters in your password?")
+var wantsLowercase = confirm("Do you want to include lowercase characters in your password?")
+var wantsNumeric = confirm("Do you want to include numbers in your password?")
+var wantsSpecial = confirm("Do you want to include symbols in your password?")
 }
 // write CONFIRMS to include uppercase, lowercase, numeric, and/or special characters. ALERT when user input is incorrect. Can be in one long if statement
-var wantsUppercase = window.confirm("Do you want to include uppercase characters in your password?")
-var wantsLowercase = window.confirm("Do you want to include lowercase characters in your password?")
-var wantsNumeric = window.confirm("Do you want to include numbers in your password?")
-var wantsSpecial = window.confirm("Do you want to include symbols in your password?")
+
 
 // var wantsUppercase = prompt ("Do you want to include uppercase characters in your password?");
 // if (wantsUppercase){
