@@ -1,5 +1,5 @@
 // Assignment Code
-
+var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
   var uppercaseCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
   var lowercaseCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -7,8 +7,9 @@
   var specialCharacters = ['~','!','@','#','$','%','^','&','*',':',';','<','>',',','/','?','.'];
 
   var possibleCharacters = [];
-  var guaranteedCharacters = [];
+  // var guaranteedCharacters = [];
   var result = [];
+  var options = [];
 
  
   // write if, else if, else statement for number of characters btw 8-128
@@ -17,27 +18,51 @@
   // } else {
   //   alert ("Your password must include between 8 and 128 characters.")
   // }
-
+function getRandom() {
+  return Math.floor(Math.random()*character.length)
+}
 // two separate if statements one for less than 8 and one for greater than 128 true/false. Make sure you are given a number.
 function createPassword() {
   var characterLength = prompt ("How many characters do you want to include?");
   if (characterLength < 8) {
     alert ("Your password must include at least 8 characters.")
-    return
   } 
+
   if (characterLength > 128){
     alert ("Your password must be less than 128 characters.")
   }
 
   if (isNaN(characterLength)) {
     alert ("Your password must be less than 128 characters.")
-    return
   }
+
 var wantsUppercase = confirm("Do you want to include uppercase characters in your password?")
-var wantsLowercase = confirm("Do you want to include lowercase characters in your password?")
-var wantsNumeric = confirm("Do you want to include numbers in your password?")
-var wantsSpecial = confirm("Do you want to include symbols in your password?")
+if (wantsUppercase === true) {
+  options.push(uppercaseCharacters)
 }
+
+var wantsLowercase = confirm("Do you want to include lowercase characters in your password?")
+if (wantsLowercase === true) {
+  options.push(lowercaseCharacters)
+}
+
+var wantsNumeric = confirm("Do you want to include numbers in your password?")
+if (wantsNumeric === true) {
+  options.push(numericCharacters)
+}
+
+var wantsSpecial = confirm("Do you want to include symbols in your password?")
+if (wantsSpecial === true) {
+  options.push(specialCharacters)
+}
+
+
+for (var i= 0; i <= character.length; i++){
+  var possibleCharacters = getRandom(possibleCharacters)
+  result.push(possibleCharacters)
+}
+}
+
 // write CONFIRMS to include uppercase, lowercase, numeric, and/or special characters. ALERT when user input is incorrect. Can be in one long if statement
 
 
@@ -76,20 +101,21 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
+
 }
 
 
 // write random password generator. if/else statement for uppercase array, lowercase array etc 
-  function randomPassword () {
-    for (var i= 0; i <= character.length; i++){
-    var randomNumber = Math.floor(Math.random()); 
-    return randomPassword;
-  }
+  // function randomPassword () {
+  //   for (var i= 0; i <= character.length; i++){
+  //   var randomNumber = Math.floor(Math.random()); 
+  //   return randomPassword;
+  // }
   
  // write alert once password is generated. If generatePassword = true then alert?
-function passwordGenerated(){
-  alert ('Your password has been created');
-}
+// function passwordGenerated(){
+//   alert ('Your password has been created');
+// }
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
-generateBtn.addEventListener("click", writePassword); }
+generateBtn.addEventListener("click", writePassword); 
