@@ -7,9 +7,9 @@ var generateBtn = document.querySelector("#generate");
   var specialCharacters = ['~','!','@','#','$','%','^','&','*',':',';','<','>',',','/','?','.'];
 
   var possibleCharacters = [];
-  // var guaranteedCharacters = [];
+  var guaranteedCharacters = [];
   var result = [];
-  var options = [];
+  
 
  
   // write if, else if, else statement for number of characters btw 8-128
@@ -23,7 +23,7 @@ function getRandom() {
 }
 // two separate if statements one for less than 8 and one for greater than 128 true/false. Make sure you are given a number.
 function createPassword() {
-  var characterLength = prompt ("How many characters do you want to include?");
+  var characterLength = window.prompt ("How many characters do you want to include?");
   if (characterLength < 8) {
     alert ("Your password must include at least 8 characters.")
   } 
@@ -36,29 +36,32 @@ function createPassword() {
     alert ("Your password must be less than 128 characters.")
   }
 
-var wantsUppercase = confirm("Do you want to include uppercase characters in your password?")
+var wantsUppercase = window.confirm("Do you want to include uppercase characters in your password?")
 if (wantsUppercase === true) {
-  options.push(uppercaseCharacters)
+  possibleCharacters.push(uppercaseCharacters)
 }
 
-var wantsLowercase = confirm("Do you want to include lowercase characters in your password?")
+var wantsLowercase = window.confirm("Do you want to include lowercase characters in your password?")
 if (wantsLowercase === true) {
-  options.push(lowercaseCharacters)
+  possibleCharacters.push(lowercaseCharacters)
 }
 
-var wantsNumeric = confirm("Do you want to include numbers in your password?")
+var wantsNumeric = window.confirm("Do you want to include numbers in your password?")
 if (wantsNumeric === true) {
-  options.push(numericCharacters)
+  possibleCharacters.push(numericCharacters)
 }
 
-var wantsSpecial = confirm("Do you want to include symbols in your password?")
+var wantsSpecial = window.confirm("Do you want to include symbols in your password?")
 if (wantsSpecial === true) {
-  options.push(specialCharacters)
+  possibleCharacters.push(specialCharacters)
 }
 
+if (possibleCharacters.length === 0) {
+  alert ("You must choose at least one type of character.")
+}
 
 for (var i= 0; i <= character.length; i++){
-  var possibleCharacters = getRandom(possibleCharacters)
+  var possibleCharacters = getRandom(possibleCharacters.length)
   result.push(possibleCharacters)
 }
 }
