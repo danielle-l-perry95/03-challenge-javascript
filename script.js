@@ -49,9 +49,13 @@ if (possibleCharacters.length === 0) {
 }
 // working on password randomizer generator 
 // generating a random password based on what the user input
+// for (var i= 0; i <= possibleCharacters.length; i++){
+//   var possibleCharacters = guaranteedCharacters[Math.floor(Math.random() *possibleCharacters.length)];
+//   result.push(possibleCharacters)
+// }
 for (var i= 0; i <= possibleCharacters.length; i++){
-  var possibleCharacters = guaranteedCharacters[Math.floor(Math.random() *possibleCharacters.length)];
-  result.push(possibleCharacters)
+  var guaranteedCharacters = Math.floor(Math.random() *possibleCharacters.length);
+  return guaranteedCharacters[possibleCharacters]
 }
 // write alert once password has been generated 
 function passwordGenerated(){ 
