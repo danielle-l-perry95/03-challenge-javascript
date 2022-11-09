@@ -8,22 +8,23 @@ var generateBtn = document.querySelector("#generate");
 
   var possibleCharacters = [];
   var guaranteedCharacters = [];
-  var result = [];
+
   
 // Function if the user's password is less than 8 characters or greater than 128
 function generatePassword() {
   var characterLength = window.prompt ("How many characters do you want to include?");
   if (characterLength < 8 || characterLength > 128) {
     window.alert ("Your password length must be between 8 and 128 characters.")
+    return
     // Includes an if statement if a number is not selected
   }else if (isNaN(characterLength)) {
     window.alert ("Error: A number has not been selected .")
-    // Includes an if statement if a number is not selected 
-  } else 
-    characterLength.push(possibleCharacters)
+    return
+  } else {
+    
+}
 
-  
-// wrote confirmations to include uppercase, lowercase, numeric and special. Also includes if user does not select a character type.
+// wrote confirmations to include uppercase, lowercase, numeric and special. 
 var wantsUppercase = window.confirm("Do you want to include uppercase characters in your password?")
 if (wantsUppercase === true) {
   possibleCharacters.push(uppercaseCharacters)
@@ -43,35 +44,32 @@ var wantsSpecial = window.confirm("Do you want to include symbols in your passwo
 if (wantsSpecial === true) {
   possibleCharacters.push(specialCharacters)
 }
-
-if (possibleCharacters.length === 0) {
+// Gives alert if user does not select at least one type of character. 
+if (wantsLowercase === false && wantsUppercase === false && wantsNumeric === false && wantsSpecial === false){
   window.alert ("You must choose at least one type of character.")
+  return
 }
-// working on password randomizer generator 
+// Work in progress random password generator. 
 // generating a random password based on what the user input
-// for (var i= 0; i <= possibleCharacters.length; i++){
-//   var possibleCharacters = guaranteedCharacters[Math.floor(Math.random() *possibleCharacters.length)];
-//   result.push(possibleCharacters)
-// }
+var userPassword = ""
 for (var i= 0; i <= possibleCharacters.length; i++){
-  var guaranteedCharacters = Math.floor(Math.random() *possibleCharacters.length);
-  return guaranteedCharacters[possibleCharacters]
+  var userPassword = Math.floor(Math.random() *possibleCharacters.length);
+  userPassword.push(possibleCharacters)
+  // write alert once password has been generated 
+  window.alert ("Your password has been created.")
 }
-// write alert once password has been generated 
-function passwordGenerated(){ 
-  window.prompt ("Your password has been created.")
-  return passwordGenerated
+return userPassword
+
 }
-
-
 
 // function writePassword() {};
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
 
-passwordText.value = password;
+
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); }
+generateBtn.addEventListener("click", writePassword); 
